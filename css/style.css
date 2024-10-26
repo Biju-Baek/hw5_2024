@@ -1,6 +1,51 @@
+/* Step1 */
+#logo {
+    width: 25px;
+    position: relative;
+    animation-name: logoanimation;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes logoanimation {
+    0% {opacity: 0; width: 25px;}
+    100% {opacity: 1; width: 475px;}
+}
+/* Step2 */
+body {
+    font-family: "poppins", "serif";
+    background-image: url(../images/concrete_seamless.png);
+}
+
+/* Step3, Step4 */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 nav ul{
     display: flex;
+    flex-direction: column;
 }
+
+/* Step5 */
+.nav_links a:visited {
+    color: blue;
+} 
+
+/* Step6 */
+.card>header {
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0;
+    border-radius: 50px 50px 0 0 ;
+}
+.card {
+    border-radius: 50px 50px 0 0;
+}
+
+/* Step7, Step8 */
 .card {
     flex-basis: 450px;
 }
@@ -9,22 +54,26 @@ nav ul{
     flex-flow: row wrap;
     justify-content: center;
 }
+
+/* Step9 */
+.gallery img {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+/* Step10 */
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 @media screen and (min-width: 900px){
-
-}
-
-@media all and (prefers-reduced-motion:reduce){
-    #logo{
-
-    }
-}
-@media print{
-
-}
-/* Step11 */
-@media screen and (min-width: 1200px){
+    /* Step11 */
     header {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
@@ -37,5 +86,49 @@ nav ul{
     }
     .pricing {
         align-items: center;
+    }
+    /* Step13 */
+    body>header {
+        position: sticky;
+        top: 0;
+    }
+}
+/* Step14 */
+@media all and (prefers-reduced-motion:reduce){
+    #logo{
+        animation: none;
+    }
+}
+@media print{
+    /* Step15, Step16 */
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+        background-color: #e5e5e5;
+    }
+    /* Step 17 */
+    .nav_links{
+        width: 900px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    /* Step18 */
+    .pricing {
+        align-items: last baseline;
+    }
+
+    /* Step19 */
+    .card {
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+    /* Step20 */
+    #gallery, .gallery {
+        display: none;
+    }
+    /* Step21 */
+    .card li:nth-child(2)::after{
+        content: "\1F44D";
     }
 }
